@@ -4,7 +4,6 @@ import Book from './modules/Book.js';
 import UI from './modules/ui.js';
 
 const dateTime = document.querySelector('.date-time');
-// dateTime.innerHTML = new Date().toLocaleString();
 const dt = localDate.now();
 dateTime.innerHTML = dt.toLocaleString(localDate.DATETIME_MED);
 
@@ -15,10 +14,7 @@ const displaySection = document.getElementById('book-list');
 const inputSection = document.querySelector('.book-input');
 const contactSection = document.querySelector('.contact-section');
 
-// eslint-disable-next-line max-classes-per-file
-
 class Collection {
-  // eslint-disable-next-line no-unused-vars
   constructor(books) {
     this.books = [];
   }
@@ -69,7 +65,6 @@ const deletebtn = document.querySelectorAll('.remove');
 deletebtn.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     if (e.target.class === 'remove') {
-      // UI.deleteBook(e.target);
       myCollection.remove(e.target);
     }
     e.preventDefault();
@@ -98,18 +93,15 @@ addList.addEventListener('click', (e) => {
 `;
   e.preventDefault();
 
-  // for add button
   const addbtn = document.querySelector('.btn');
   addbtn.addEventListener('click', (e) => {
     const title = document.querySelector('.title').value;
     const author = document.querySelector('.author').value;
     if (title === '' || author === '') {
-      // eslint-disable-next-line no-alert
       alert('Please fill in all fields');
     } else {
       const newBook = new Book(title, author);
       myCollection.add(newBook);
-      // UI.addBookToList(newBook);
       UI.clearFields();
       e.preventDefault();
     }
