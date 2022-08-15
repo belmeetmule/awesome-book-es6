@@ -15,7 +15,7 @@ const inputSection = document.querySelector('.book-input');
 const contactSection = document.querySelector('.contact-section');
 
 class Collection {
-  constructor(books) {
+  constructor() {
     this.books = [];
   }
 
